@@ -1,31 +1,18 @@
-# RAG Pipeline – FastAPI + ChromaDB (Docker Ready)
+# RAG App – Retrieval-Augmented Generation
 
-A simple Retrieval-Augmented Generation (RAG) service with file upload, retrieval, and LLM answers.
-Tech: FastAPI, ChromaDB, OpenAI or Gemini (configurable), SQLite for metadata.
+A containerized RAG pipeline: upload documents, ask questions, get grounded answers.  
+Runs locally with Docker; supports multiple LLM providers.
 
-## Quickstart (Local)
-1) Install
-   ```bash
-   python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-2) Configure
-   ```bash
-   cp .env.example .env
-   # Fill your OPENAI_API_KEY or GEMINI_API_KEY
-   ```
-3) Run API
-   ```bash
-   uvicorn app.main:app --reload --port 8000
-   ```
-4) Swagger UI: http://localhost:8000/docs
+## ✨ Features
+- Upload up to 20 docs, large-page PDFs supported
+- Chunking + embeddings → vector DB retrieval
+- Context-aware answers via LLM
+- REST API (FastAPI) with Swagger docs
+- Docker Compose for one-command start
 
-## Docker
-```bash
-docker compose up --build
-```
-
-## Tests
-```bash
-pytest -q
-```
+## 🧱 Architecture (high-level)
+- **API**: FastAPI
+- **Vector DB**: Chromadb 
+- **Embeddings**: SentenceTransformers (all-MiniLM-L6-v2) with optional OpenAI Embeddings
+- **LLM**: Configurable via `LLM_PROVIDER` (supports OpenAI and local embedding/generation)
+- **Metadata store**: ChromaDB’s built-in persistent storage (local disk at `config.PERSIST_DIR`)
