@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "RAG App API",
+    "_postman_id": "e5c0f810-1b7d-4c87-9247-98b6d3311f1b",
+    "description": "Postman collection for RAG App API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Upload Document",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "sample.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/upload",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["upload"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Query Documents",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is in the uploaded document?\",\n  \"top_k\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/query",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["query"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Metadata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/metadata",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["metadata"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
