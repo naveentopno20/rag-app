@@ -33,53 +33,46 @@ This project implements a Retrieval-Augmented Generation (RAG) pipeline that ena
 ```bash
 git clone https://github.com/naveentopno20/rag-app.git
 cd rag-app
-
----
 ```
+
 ### 2. Install Dependencies 
-
+```bash
 pip install -r requirements.txt
-
----
+```
 
 ### 3. Run with Docker
-
+```bash
 docker-compose up --build
 The API will be available at:
 http://localhost:8000
-
----
+```
 
 ### API Endpoints
-
+```bash
 | Method | Endpoint     | Description              |
 | ------ | ------------ | ------------------------ |
 | POST   | `/upload`    | Upload documents         |
 | POST   | `/query`     | Query uploaded documents |
 | GET    | `/documents` | List document metadata   |
-
----
+```
 
 ### Postman Testing
-
+```bash
 The Postman collection is included in:
 docs/rag-app-postman.json
 Import this file into Postman to test all endpoints.
-
----
+```
 
 ### Screenshots
-
+```bash
 1. Docker container running the RAG app.
 2. Successful API query request (Swagger UI/Postman).
-
----
+```
 
 ### Repository
-
+```bash
 GitHub Link: https://github.com/naveentopno20/rag-app
-
----
+```
 
 ### Author
 ```bash
