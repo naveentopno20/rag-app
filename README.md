@@ -16,3 +16,7 @@ Runs locally with Docker; supports multiple LLM providers.
 - **Embeddings**: SentenceTransformers (all-MiniLM-L6-v2) with optional OpenAI Embeddings
 - **LLM**: Configurable via `LLM_PROVIDER` (supports OpenAI and local embedding/generation)
 - **Metadata store**: ChromaDB’s built-in persistent storage (local disk at `config.PERSIST_DIR`)
+
+You can test the API using Postman.
+
+A ready-to-use **Postman Collection** is included in [docs/rag-app-postman.json](docs/rag-app-postman.json) for testing the API locally.
